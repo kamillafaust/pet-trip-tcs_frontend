@@ -15,7 +15,7 @@ export const DescriptionItems = styled(Box)`
 export const Title = styled(Typography)`
   padding-top: 33px;
   color: #373737;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   font-size: 20px;
   font-weight: 100;
   text-align: center;
@@ -28,7 +28,7 @@ export const TextAbout = styled(Typography)`
   font-size: 14px;
   padding: 0px 150px;
   font-weight: 600;
-  line-height: 20px;
+  line-height: 28px;
 
   span {
     color: #f47920;
@@ -66,7 +66,7 @@ export const ContainerBar = styled(Box)`
   height: 50px;
   margin: auto;
   margin-top: 10px;
-  max-width: 600px;
+  max-width: 560px;
   border-radius: 10px;
   box-shadow: 0px 0px 4px #00000057;
   display: flex;

@@ -103,7 +103,7 @@ const SideBar = () => {
               onClick={() => controlButtonWeight("five")}
               type="radio"
               {...register("weight")}
-              value="5kg"
+              value="mini"
               id="5kg"
             />
             <BoxButton checked={checkedButtonWeight.five}>

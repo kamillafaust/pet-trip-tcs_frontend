@@ -36,7 +36,7 @@ const Search = () => {
               setCidadeSelecionada(newValue);
             }}
             defaultValue={cidadeSelecionada}
-            style={{ fontSize: 20 }}
+            style={{ fontSize: 10 }}
             renderInput={(params) => (
               <TextField
                 {...params}

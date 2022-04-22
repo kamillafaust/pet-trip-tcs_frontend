@@ -22,19 +22,23 @@ export const BoxSearch = styled(Box)`
 `;
 
 export const InputAutocomplete = styled(Autocomplete)`
-  width: 450px;
-  padding-left: 30px;
+  width: 380px;
+  padding-left: 40px;
 
   & input {
     width: 200px;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 600;
-    border-bottom: 0px;
-    content: none;
+  }
+
+  @media (max-width: 400px) {
+    & input {
+      font-size: 10px;
+    }
   }
 
   & svg {
-    width: 40px;
+    width: 30px;
     padding: 4px;
     margin-bottom: 5x;
   }
@@ -49,7 +53,7 @@ export const ButtonSearch = styled(Button)`
   background-color: #f47920;
   color: #ffffff;
   font-size: 8px;
-  margin-left: 15px;
+  margin-left: 35px;
 
   @media (max-width: 450px) {
     margin-top: 10px;

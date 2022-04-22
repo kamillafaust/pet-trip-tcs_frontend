@@ -46,7 +46,7 @@ export const TypographyTitle = styled(Typography)`
 export const Subscribe = styled(Typography)`
   a {
     text-decoration: none;
-    font-size: 12px;
+    font-size: 14px;
     color: #f47920;
     font-family: "Montserrat Alternates", sans-serif;
   }
