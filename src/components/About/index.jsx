@@ -15,9 +15,9 @@ import {
 const About = () => {
   return (
     <AboutDescription>
-      <Container maxWidth="lg" style={{ paddingBottom: 15 }}>
+      <Container maxWidth="lg" style={{ paddingBottom: 25 }}>
         <DescriptionItems>
-          <Title>Encontre o hotel ideal para seu amigão</Title>
+          <Title>Encontre o hotel ideal para o seu amigão</Title>
           <TextAbout>
             A <span>Pet Trip</span> vem trazer um maior conforto para você que
             quer viajar e gostaria de deixar seu pet em um local apropriado e

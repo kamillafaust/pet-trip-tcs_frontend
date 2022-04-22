@@ -10,7 +10,6 @@ export function HotelContextProvider({ children }) {
     id: 1,
   });
   const [citiesOptions, setCitiesOptions] = useState([]);
-  console.log(city, "city");
 
   const handleSearch = async (data) => {
     let paramsOptions = {};

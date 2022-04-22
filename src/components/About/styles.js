@@ -15,9 +15,11 @@ export const DescriptionItems = styled(Box)`
 export const Title = styled(Typography)`
   padding-top: 33px;
   color: #373737;
-  margin-bottom: 26px;
+  margin-bottom: 20px;
   font-size: 20px;
+  font-weight: 100;
   text-align: center;
+  font-family: "Fredoka One", cursive;
 `;
 
 export const TextAbout = styled(Typography)`
@@ -60,7 +62,7 @@ export const QuestionAbout = styled(Typography)`
 `;
 
 export const ContainerBar = styled(Box)`
-  background-color: #f8d57e;
+  background-color: #fffdfd;
   height: 50px;
   margin: auto;
   margin-top: 10px;

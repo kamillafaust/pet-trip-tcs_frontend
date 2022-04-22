@@ -21,7 +21,7 @@ import "./styles.css";
 const CardHotel = () => {
   const { city, hoteis } = useHotels();
   const [pageNumber, setPageNumber] = useState(0);
-  const hotelsPage = 3;
+  const hotelsPage = 4;
   const hotelVisited = pageNumber * hotelsPage;
   const pageCount = Math.ceil(hoteis.length / hotelsPage);
 
