@@ -23,7 +23,7 @@ import {
 
 const SideBar = () => {
   const { register, handleSubmit } = useForm();
-  const { handleSearch } = useHotels();
+  const { setFilter } = useHotels();
 
   const [checkedButtonType, setCheckedButtonType] = useState(filterType);
   const [checkedButtonWeight, setCheckedButtonWeight] = useState(filterWeight);
@@ -59,13 +59,17 @@ const SideBar = () => {
     });
   }
 
+  function handleFilters(data) {
+    setFilter(data);
+  }
+
   return (
     <ContainerSideBar>
       <TextFilter>Filtros de busca:</TextFilter>
       <BoxLine />
       <TextFilter>Qual o tipo do seu pet?</TextFilter>
 
-      <form onSubmit={handleSubmit(handleSearch)}>
+      <form onSubmit={handleSubmit(handleFilters)}>
         <AnimalType>
           <label htmlFor="cat">
             <input

@@ -6,13 +6,13 @@ import { useHotels } from "../../contextApi/useHotels";
 const Search = () => {
   const { setCity, handleSearchCities, citiesOptions } = useHotels();
 
-  const [cidadeSelecionada, setCidadeSelecionada] = useState({
-    label: "Florianópolis",
+  const [selectedCity, setSelectedCity] = useState({
+    label: "Florianópolis, SC",
     id: 1,
   });
 
   function handleSubmit() {
-    setCity(cidadeSelecionada);
+    setCity(selectedCity);
   }
 
   useEffect(() => {
@@ -33,9 +33,8 @@ const Search = () => {
             id="combo-box-demo"
             options={citiesOptions}
             onChange={(event, newValue) => {
-              setCidadeSelecionada(newValue);
+              setSelectedCity(newValue);
             }}
-            defaultValue={cidadeSelecionada}
             style={{ fontSize: 10 }}
             renderInput={(params) => (
               <TextField

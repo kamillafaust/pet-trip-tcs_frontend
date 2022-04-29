@@ -17,9 +17,9 @@ import { useHotels } from "../../contextApi/useHotels";
 import HotelNotFound from "../HotelNotFound";
 
 const CardHotel = () => {
-  const { city, hoteis } = useHotels();
+  const { city, hotels } = useHotels();
 
-  if (hoteis.length === 0) {
+  if (hotels.length === 0) {
     return <HotelNotFound />;
   } else {
     return (
@@ -29,7 +29,7 @@ const CardHotel = () => {
             Hotéis em: <span>{city.label} </span>
           </TextCity>
           <ul>
-            {hoteis.map((hotel) => (
+            {hotels.map((hotel) => (
               <li key={hotel.id}>
                 <CardBox>
                   <BoxImage>

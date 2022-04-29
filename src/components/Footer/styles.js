@@ -3,7 +3,9 @@ import { Box, styled, Typography } from "@mui/material";
 export const SectionFooter = styled(Box)`
   font-family: "Montserrat Alternates", sans-serif;
   background-color: #e5e7eb38;
-  height: 90px;
+  height: 100px;
+  bottom: 0;
+  width: 100%;
 `;
 
 export const BoxText = styled(Typography)`

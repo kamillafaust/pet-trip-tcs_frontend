@@ -27,17 +27,17 @@ import {
 
 const SideBar = () => {
   const { register, handleSubmit } = useForm();
-  const { handleSearch } = useHotels();
+  const { setFilter } = useHotels();
   const [open, setOpen] = useState(false);
 
-  const [checkedButtonType, setCheckedButton] = useState(filterType);
+  const [checkedButtonType, setCheckedButtonType] = useState(filterType);
   const [checkedButtonWeight, setCheckedButtonWeight] = useState(filterWeight);
   const [checkedButtonGender, setButtonGender] = useState(filterGender);
   const [checkedButtonCastrated, setButtonCastrated] =
     useState(filterCastrated);
 
   function controlButtonType(type) {
-    setCheckedButton({
+    setCheckedButtonType({
       ...filterType,
       [type]: true,
     });
@@ -64,6 +64,10 @@ const SideBar = () => {
     });
   }
 
+  function handleFilters(data) {
+    setFilter(data);
+  }
+
   return (
     <>
       <BoxButtonFilter>
@@ -78,7 +82,7 @@ const SideBar = () => {
           <BoxLine />
           <TextFilter>Qual o tipo do seu pet?</TextFilter>
 
-          <form onSubmit={handleSubmit(handleSearch)}>
+          <form onSubmit={handleSubmit(handleFilters)}>
             <AnimalType>
               <label htmlFor="cat">
                 <input

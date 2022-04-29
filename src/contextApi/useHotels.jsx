@@ -4,27 +4,26 @@ import api from "../services/api";
 export const HotelContext = createContext({});
 
 export function HotelContextProvider({ children }) {
-  const [hoteis, setHoteis] = useState([]);
+  const [hotels, setHotels] = useState([]);
+  const [filter, setFilter] = useState({});
   const [city, setCity] = useState({
-    label: "Florianópolis",
+    label: "Florianópolis, SC",
     id: 1,
   });
 
-  console.log(city, "city");
   const [citiesOptions, setCitiesOptions] = useState([]);
 
-  const handleSearch = async (data) => {
+  const handleSearch = async () => {
     let paramsOptions = {};
-    if (data) {
-      paramsOptions = {
-        params: {
-          type: data.type,
-          gender: data.gender,
-          castrated: data.castrated,
-          weight: data.weight,
-        },
-      };
-    }
+    paramsOptions = {
+      params: {
+        type: filter.type,
+        gender: filter.gender,
+        castrated: filter.castrated,
+        weight: filter.weight,
+      },
+    };
+
     paramsOptions = {
       params: {
         ...paramsOptions.params,
@@ -34,16 +33,15 @@ export function HotelContextProvider({ children }) {
 
     try {
       const response = await api.get("/establishment/", paramsOptions);
-      console.log(response.data, "dados carregados API");
-      setHoteis(response.data.content);
+      setHotels(response.data.content);
     } catch (error) {
-      setHoteis([]);
+      setHotels([]);
     }
   };
 
   useEffect(() => {
     handleSearch();
-  }, [city]);
+  }, [city, filter]);
 
   const handleSearchCities = async () => {
     try {
@@ -56,7 +54,7 @@ export function HotelContextProvider({ children }) {
       });
       setCitiesOptions(citiesFormated);
     } catch (error) {
-      console.log("deu erro");
+      setCitiesOptions([]);
     }
   };
 
@@ -65,10 +63,11 @@ export function HotelContextProvider({ children }) {
       value={{
         city,
         setCity,
-        hoteis,
+        hotels,
         handleSearch,
         citiesOptions,
         handleSearchCities,
+        setFilter,
       }}
     >
       {children}
