@@ -25,14 +25,14 @@ const SideBar = () => {
   const { register, handleSubmit } = useForm();
   const { handleSearch } = useHotels();
 
-  const [checkedButtonType, setCheckedButton] = useState(filterType);
+  const [checkedButtonType, setCheckedButtonType] = useState(filterType);
   const [checkedButtonWeight, setCheckedButtonWeight] = useState(filterWeight);
   const [checkedButtonGender, setButtonGender] = useState(filterGender);
   const [checkedButtonCastrated, setButtonCastrated] =
     useState(filterCastrated);
 
   function controlButtonType(type) {
-    setCheckedButton({
+    setCheckedButtonType({
       ...filterType,
       [type]: true,
     });
@@ -93,9 +93,7 @@ const SideBar = () => {
             </BoxButton>
           </label>
         </AnimalType>
-
         <BoxLine />
-
         <TextSize>Seu pet encaixa em qual porte?</TextSize>
         <AnimalSize>
           <label htmlFor="5kg">
@@ -150,9 +148,7 @@ const SideBar = () => {
             </BoxButton>
           </label>
         </AnimalSize>
-
         <BoxLine />
-
         <TextFilter>Qual o sexo do seu pet?</TextFilter>
         <AnimalType>
           <label htmlFor="male">

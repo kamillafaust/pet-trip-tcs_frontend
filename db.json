@@ -87,7 +87,7 @@
       "filters": {
         "type": "dog",
         "gender": "male",
-        "weight": "20kg"
+        "weight": "5kg"
       },
       "address": {
         "street": "Rua hotel 4",

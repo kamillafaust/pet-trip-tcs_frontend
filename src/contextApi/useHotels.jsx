@@ -9,33 +9,35 @@ export function HotelContextProvider({ children }) {
     label: "Florianópolis",
     id: 1,
   });
+
+  console.log(city, "city");
   const [citiesOptions, setCitiesOptions] = useState([]);
 
   const handleSearch = async (data) => {
     let paramsOptions = {};
-
     if (data) {
       paramsOptions = {
         params: {
-          "filters.type": data.type,
-          "filters.gender": data.gender,
-          "filters.castrated": data.castrated,
-          "filters.weight": data.weight,
+          type: data.type,
+          gender: data.gender,
+          castrated: data.castrated,
+          weight: data.weight,
         },
       };
     }
     paramsOptions = {
       params: {
         ...paramsOptions.params,
-        "address.city.id": city.id,
+        cityId: city.id,
       },
     };
 
     try {
-      const response = await api.get("/hoteis", paramsOptions);
-      setHoteis(response.data);
+      const response = await api.get("/establishment/", paramsOptions);
+      console.log(response.data, "dados carregados API");
+      setHoteis(response.data.content);
     } catch (error) {
-      console.log("deu erro");
+      setHoteis([]);
     }
   };
 
@@ -45,10 +47,10 @@ export function HotelContextProvider({ children }) {
 
   const handleSearchCities = async () => {
     try {
-      const response = await api.get("/cities");
+      const response = await api.get("/cities/");
       const citiesFormated = response.data.map((city) => {
         return {
-          label: city.city,
+          label: city.cityAndState,
           id: city.id,
         };
       });
